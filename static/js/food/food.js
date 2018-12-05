@@ -80,7 +80,7 @@ $(document).ready(function(){
     		var el=document.getElementById("contentbox")
     		var name=this.parentNode.children[0].innerText;
             var self=this.innerText
-    		el.innerHTML=""
+    		
 
 
            
@@ -98,40 +98,48 @@ $(document).ready(function(){
 
 
             if(name=="共有"&self!="共有")
-            {  
+            {   el.innerHTML=""
                 $(this).css("color","blue")
                 show("gy",this.innerText)
             }
     		if(name=="吉首"&self!="吉首")
-    		{   $(this).css("color","blue")
+    		{   el.innerHTML=""
+                $(this).css("color","blue")
     			show("js",this.innerText)
     		}
     		if(name=="古丈"&self!="古丈")
     		{   $(this).css("color","blue")
+                el.innerHTML=""
     			show("gz",this.innerText)
     		}
     		if(name=="永顺"&self!="永顺")
-    		{   $(this).css("color","blue")
+    		{   el.innerHTML=""
+                $(this).css("color","blue")
     			show("ys",this.innerText)
     		}
     		if(name=="泸溪"&self!="泸溪")
-    		{   $(this).css("color","blue")
+    		{   el.innerHTML=""
+                $(this).css("color","blue")
     			show("lx",this.innerText)
     		}
     		if(name=="花垣"&self!="花垣")
-    		{   $(this).css("color","blue")
+    		{   el.innerHTML=""
+                $(this).css("color","blue")
     			show("hy",this.innerText)
     		}
     		if(name=="龙山"&self!="龙山")
-    		{   $(this).css("color","blue")
+    		{   el.innerHTML=""
+                $(this).css("color","blue")
     			show("ls",this.innerText)
     		}
     		if(name=="保靖"&self!="保靖")
-    		{   $(this).css("color","blue")
+    		{   el.innerHTML=""
+                $(this).css("color","blue")
     			show("bj",this.innerText)
     		}
     		if(name=="凤凰"&self!="凤凰")
-    		{   $(this).css("color","blue")
+    		{   el.innerHTML=""
+                $(this).css("color","blue")
     			show("fh",this.innerText)
     		}
     		e.stopPropagation()
