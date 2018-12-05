@@ -10,15 +10,16 @@ body{
 	background: #f0f3ef;
 	text-align: center;
 	width:100%;  
+	min-width:1200px;
 	
 }
 #container{
 	box-sizing: border-box;
-	width: 1200px;
-	height:1100px; 
-	background: #f0f3ef;
+	min-width: 1200px;
+	width:100%; 
 	/*background: red;*/
-	margin: 0 auto;
+	height: 100%;
+	/*background: red;*/
 	/*padding:0 20 20 20px;*/
 }
 ul{
@@ -72,21 +73,26 @@ ul>li:hover{
 	width:100%; 
 	height:100%; 
 }
-section{
+.scenery{
+	margin: 0 auto;
+	background: red;
 
 }
 .box{
+	box-sizing: border-box;
 	float: left;
 	padding:10px;
+	margin-left:1%;
 	margin-top:20px;
 	background:#fff;
-	width: 365.5px;
+	width: 32%;
 	height: 260px;
 	border:0.5px solid #eee;
 }
 .box>img{
 	width: 100%;
 	height: 80%;
+
 }
 
 .name{
@@ -99,23 +105,23 @@ section{
 	
 }
 
-.box:nth-child(4n+3){
+/*.box:nth-child(4n+3){
 	margin-left:18px;
 
 }
 
 .box:nth-child(4n){
 	margin-left:18px;
-}
+}*/
 
 .footer{
 	clear:both;
 	float: left;
-    margin: 0 auto;
+    margin-left:1%;
 	margin-top:20px; 
 	box-sizing: border-box;
 	padding-top:50px; 
-	width:1200px; 
+	width:98%; 
 	/*float:left; */
     height:100px;  
     text-align: center;

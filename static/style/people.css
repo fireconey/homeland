@@ -20,10 +20,9 @@ nav{
 
 }
 #container{
-	position: relative;
 	box-sizing: border-box;
 	width: 1200px;
-	/*height:1100px; */
+	height:1100px; 
 	/*background: #FFF;*/
 	/*background: red;*/
 	/*background: rgb(255,255,255,.5);*/
