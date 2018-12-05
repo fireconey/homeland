@@ -40,6 +40,11 @@ margin-right: 10px;
 color:#fff;
 
 }
+
+ul li:nth-child(1){
+	text-decoration:underline;
+
+}
 /*ul li:nth-child(5){
 	border-right: 1px solid yellow;
 
