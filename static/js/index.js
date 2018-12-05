@@ -35,7 +35,6 @@ function show()
   if(sib=="人物")
   {
     cp=cmp(people)
-
     loc=cp[i%3+3]
     img.src="static/img/people/"+loc+"/"+cp[i%3]
     name.innerText=cp[i%3].replace(".jpg","")
@@ -62,13 +61,15 @@ function diclick()
     var sib=this.parentNode.children[0].innerText.split("———")[1]
     if($(e.target).is("div"))
 
-      alert($(e.target).name)
+      
     if(sib=="风景")
     {
       var data=scenery
+
       cp=cmp(data)
       loc=cp[cp.indexOf(name+".jpg")+3]
       time=cp[cp.indexOf(name+".jpg")+6]
+
       window.location.href="pages/scenery.html?loc="+loc+"&time="+time
 
     }
@@ -110,6 +111,7 @@ function  cmp(data)
   var img=[]
   var loc=[]
   var imgli=[]
+  var len=0
 
   for(var i in data)
   { 
@@ -119,7 +121,7 @@ function  cmp(data)
      temp.push(j)
      img.push(data[i][j][0])
      loc.push(i)
-
+    len+=1
 
    }
  }
@@ -132,17 +134,17 @@ function  cmp(data)
 
 
 
- for(var i=0;i<24;i++)
+ for(var i=0;i<len;i++)
  {
-   if(temp[i]==st[23])
+   if(temp[i]==st[len-1])
    {
     onelist.push(i)
   }
-  if(temp[i]==st[22])
+  if(temp[i]==st[len-2])
   {
     twolist.push(i)
   }
-  if(temp[i]==st[21])
+  if(temp[i]==st[len-3])
   {
     threelist.push(i)
   }
@@ -164,36 +166,36 @@ else if(onelist.length==2)
 {
   imgli.push(img[onelist[0]])
   imgli.push(img[onelist[1]])
-  imgli.push(img[temp.indexOf(st[21])])
+  imgli.push(img[temp.indexOf(st[len-3])])
 
   imgli.push(loc[onelist[0]])
   imgli.push(loc[onelist[1]])
-  imgli.push(loc[temp.indexOf(st[21])])
+  imgli.push(loc[temp.indexOf(st[len-3])])
 }
 
 else if(twolist.length>=2)
 {
-  imgli.push(img[temp.indexOf(st[23])])
+  imgli.push(img[temp.indexOf(st[len-1])])
   imgli.push(img[twolist[0]])
   imgli.push(img[twolist[1]])
 
-  imgli.push(loc[temp.indexOf(st[23])])
+  imgli.push(loc[temp.indexOf(st[len-1])])
   imgli.push(loc[twolist[0]])
   imgli.push(loc[twolist[1]])
 }
 else{
-  imgli.push(img[temp.indexOf(st[23])])
-  imgli.push(img[temp.indexOf(st[22])])
-  imgli.push(img[temp.indexOf(st[21])])
+  imgli.push(img[temp.indexOf(st[len-1])])
+  imgli.push(img[temp.indexOf(st[len-2])])
+  imgli.push(img[temp.indexOf(st[len-3])])
 
-  imgli.push(loc[temp.indexOf(st[23])])
-  imgli.push(loc[temp.indexOf(st[22])])
-  imgli.push(loc[temp.indexOf(st[21])])
+  imgli.push(loc[temp.indexOf(st[len-1])])
+  imgli.push(loc[temp.indexOf(st[len-2])])
+  imgli.push(loc[temp.indexOf(st[len-3])])
 }
 
-imgli.push(st[23])
-imgli.push(st[22])
-imgli.push(st[21])
+imgli.push(st[len-1])
+imgli.push(st[len-2])
+imgli.push(st[len-3])
 
 
 return imgli

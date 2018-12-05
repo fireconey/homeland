@@ -21,10 +21,18 @@ $(document).ready(function(){
     function  initleftboor(){
     	var click=$(".split")
     	for(var i=0;i<8;i++)
-    	{
-    		click.children("p")[4*i+1].innerText=citylist[i][0]
-    		click.children("p")[4*i+2].innerText=citylist[i][1]
-    		click.children("p")[4*i+3].innerText=citylist[i][2]
+    	{   
+            for(var j=0;j<citylist[i].length;j++)
+            {
+
+                var node=document.createElement("p");
+                var textnode=document.createTextNode(citylist[i][j]);
+                    node.appendChild(textnode);
+                click[i].append(node)
+            }
+    		
+    		// click.children("p")[4*i+2].innerText=citylist[i][1]
+    		// click.children("p")[4*i+3].innerText=citylist[i][2]
     	}
     }
     
@@ -70,39 +78,60 @@ $(document).ready(function(){
     	$(".split p").click(function(e){
     		var el=document.getElementById("contentbox")
     		var name=this.parentNode.children[0].innerText;
-    		el.innerHTML=""
-    		if(name=="吉首")
-    		{   
-    			show("js",this.innerText)
-    		}
-    		if(name=="古丈")
-    		{   
-    			show("gz",this.innerText)
-    		}
-    		if(name=="永顺")
-    		{   
-    			show("ys",this.innerText)
-    		}
-    		if(name=="泸溪")
-    		{   
-    			show("lx",this.innerText)
-    		}
-    		if(name=="花垣")
-    		{   
-    			show("hy",this.innerText)
-    		}
-    		if(name=="龙山")
-    		{   
-    			show("ls",this.innerText)
-    		}
-    		if(name=="保靖")
-    		{   
-    			show("bj",this.innerText)
-    		}
-    		if(name=="凤凰")
-    		{   
-    			show("fh",this.innerText)
-    		}
+    		 var self=this.innerText
+            el.innerHTML=""
+
+       
+            var p=$(".split p")
+            for(var i in p)
+            {    if(isNaN(i))
+                {
+                    break
+                }
+                if(p[i].style.color=="blue")
+                {
+                    p[i].style.color="#666"
+                } 
+            }
+    		
+
+            if(name=="共有"&self!="共有")
+            {  
+                $(this).css("color","blue")
+                show("gy",this.innerText)
+            }
+            if(name=="吉首"&self!="吉首")
+            {   $(this).css("color","blue")
+                show("js",this.innerText)
+            }
+            if(name=="古丈"&self!="古丈")
+            {   $(this).css("color","blue")
+                show("gz",this.innerText)
+            }
+            if(name=="永顺"&self!="永顺")
+            {   $(this).css("color","blue")
+                show("ys",this.innerText)
+            }
+            if(name=="泸溪"&self!="泸溪")
+            {   $(this).css("color","blue")
+                show("lx",this.innerText)
+            }
+            if(name=="花垣"&self!="花垣")
+            {   $(this).css("color","blue")
+                show("hy",this.innerText)
+            }
+            if(name=="龙山"&self!="龙山")
+            {   $(this).css("color","blue")
+                show("ls",this.innerText)
+            }
+            if(name=="保靖"&self!="保靖")
+            {   $(this).css("color","blue")
+                show("bj",this.innerText)
+            }
+            if(name=="凤凰"&self!="凤凰")
+            {   $(this).css("color","blue")
+                show("fh",this.innerText)
+            }
     		e.stopPropagation()
     	})
 
@@ -123,10 +152,11 @@ $(document).ready(function(){
     		var ob=$(".split")
     		for(var i=0 ;i<8 ;i++)
     		{   
-
+               
     			if(locod[ob[i].children[0].innerText]==loc)
     			{  
-    				for(var j=0;j<3;j++)
+                    var len=ob[i].children.length-1
+    				for(var j=0;j<len;j++)
     				{  
     					var childel=ob[i].children[j+1]
     					console.log(childel.innerText,time)
