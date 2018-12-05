@@ -100,12 +100,12 @@ section{
 }
 
 .box:nth-child(4n+3){
-	margin-left:20px;
+	margin-left:19px;
 
 }
 
 .box:nth-child(4n){
-	margin-left:20px;
+	margin-left:19px;
 }
 
 .footer{
