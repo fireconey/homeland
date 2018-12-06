@@ -59,13 +59,13 @@ function diclick()
     e.stopPropagation()
     var name=this.children[1].innerText
     var sib=this.parentNode.children[0].innerText.split("———")[1]
-    if($(e.target).is("div"))
-
+    
+   
       
     if(sib=="风景")
     {
       var data=scenery
-
+      
       cp=cmp(data)
       loc=cp[cp.indexOf(name+".jpg")+3]
       time=cp[cp.indexOf(name+".jpg")+6]
